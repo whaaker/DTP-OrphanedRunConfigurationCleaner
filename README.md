@@ -17,7 +17,7 @@ The cleaner works like this:
 
 ## Requirements
 
-- Python 3 must be installed.
+- Python 3.7 or later must be installed.
 - The machine running the script must be able to reach your DTP server.
 - You must know:
   - DTP host
@@ -53,6 +53,18 @@ chmod +x ./clean-orphaned-run-configurations.sh ./clean_orphaned_run_configurati
   --dry-run
 ```
 
+If your DTP server uses a self-signed certificate, add `--insecure`:
+
+```sh
+./clean-orphaned-run-configurations.sh \
+  --host dtp.example.com \
+  --port 8443 \
+  --project "spring-petclinic-microservices-wilhelm" \
+  --username admin \
+  --insecure \
+  --dry-run
+```
+
 If you omit `--password`, the script prompts:
 
 ```sh
@@ -69,6 +81,12 @@ From the repository root in Command Prompt:
 
 ```bat
 clean-orphaned-run-configurations.cmd --host dtp.example.com --port 8443 --project "spring-petclinic-microservices-wilhelm" --username admin --dry-run
+```
+
+If your DTP server uses a self-signed certificate, add `--insecure`:
+
+```bat
+clean-orphaned-run-configurations.cmd --host dtp.example.com --port 8443 --project "spring-petclinic-microservices-wilhelm" --username admin --insecure --dry-run
 ```
 
 If Python is not registered through `py`, the wrapper falls back to `python`.

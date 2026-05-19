@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 import argparse
 import base64
 import getpass
@@ -51,7 +52,10 @@ class DtpClient:
         }
         self.context = None
         if scheme == "https" and insecure:
-            self.context = ssl._create_unverified_context()
+            ctx = ssl.create_default_context()
+            ctx.check_hostname = False
+            ctx.verify_mode = ssl.CERT_NONE
+            self.context = ctx
 
     def request_json(self, method: str, path: str, query: dict[str, Any] | None = None, payload: Any | None = None) -> Any:
         url = f"{self.base_url}{path}"
