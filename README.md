@@ -11,9 +11,9 @@ The cleaner works like this:
 
 ## Files
 
-- `/home/runner/work/DTP-OrphanedRunConfigurationCleaner/DTP-OrphanedRunConfigurationCleaner/clean_orphaned_run_configurations.py` - main implementation
-- `/home/runner/work/DTP-OrphanedRunConfigurationCleaner/DTP-OrphanedRunConfigurationCleaner/clean-orphaned-run-configurations.sh` - Linux/macOS entry point
-- `/home/runner/work/DTP-OrphanedRunConfigurationCleaner/DTP-OrphanedRunConfigurationCleaner/clean-orphaned-run-configurations.cmd` - Windows entry point
+- `clean_orphaned_run_configurations.py` - main implementation
+- `clean-orphaned-run-configurations.sh` - Linux entry point
+- `clean-orphaned-run-configurations.cmd` - Windows entry point
 
 ## Requirements
 
